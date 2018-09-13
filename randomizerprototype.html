@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Random Name Selector Prototype</h2>
+
+<p id="namelist">Names</p>
+
+<p id="demo">
+Click button for random name
+<script>
+var names = [
+	"noah",
+    "nathan",
+    "ben",
+	"rey",
+	"dexter",
+	"kai"
+    ];
+    
+var namesAsString = names.join(', ');
+document.getElementById("namelist").innerHTML = "Names: " + namesAsString;
+
+function Randomize() {
+	var num = Math.floor(Math.random() * names.length);
+	document.getElementById("demo").innerHTML = names[num];
+}
+</script>
+</p>
+
+<button type="button" onclick="Randomize()">Randomize</button>
+
+</body>
+</html>
