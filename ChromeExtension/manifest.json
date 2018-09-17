@@ -1,0 +1,18 @@
+  {
+    "name": "My Extension",
+    "version": "2.1",
+	"manifest_version": 2,
+    "description": "Gets information from Google.",
+    "icons": {
+      "128": "Logo.png"
+    },
+    "background": {
+      "persistent": false,
+      "scripts": ["background_script.js"]
+    },
+    "permissions": ["https://*.google.com/", "activeTab", {"fileSystem": ["write", "retainEntries", "directory"]}, "storage"],
+    "browser_action": {
+      "default_icon": "Logo.png",
+      "default_popup": "popup.html"
+    }
+  }
