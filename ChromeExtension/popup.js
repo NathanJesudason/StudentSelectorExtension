@@ -1,6 +1,5 @@
 chrome.browserAction.onClicked.addListener(function() { 
-	Class = 1;
-	chrome.storage.sync.get([Class], function(result) {
+	chrome.storage.sync.get([selectClass(classNum)], function(result) {
 		document.getElementById('Students').value = result.Class;
 		names = result.key.split('\n');
 		alert('successful load');
@@ -12,8 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	saveListButton.addEventListener('click', function() {
 		var text1 = document.getElementById('Students').value;
 		names = text1.split('\n');
-		Class = document.getElementById('list').value;
-		chrome.storage.sync.set({Class: text1}, function() {
+		chrome.storage.sync.set({selectClass(classNum): text1}, function() {
 			alert('Value is set to ' + text1);
 		});
 		alert(text1);
@@ -29,9 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	  
 	var SelectClassButton = document.getElementById('ClassSelect');
 	SelectClassButton.addEventListener('click', function() {
-		Class = document.getElementById('list').value;
-		alert(Class);
-		chrome.storage.sync.get([Class], function(result) {
+		chrome.storage.sync.get([selectClass(classNum)], function(result) {
 			document.getElementById('Students').value = result.Class;
 			names = result.key.split('\n');
 			alert('Class list has been changed.');
@@ -39,6 +35,39 @@ document.addEventListener('DOMContentLoaded', function() {
 		alert('An attempt was made to change class list'); 
 	}, false);
 }, false);
+
+function SelectClass(classNum){
+	Class = document.getElementById('list').value;
+	switch(Class){
+		case 1:
+			return classNum = "Period1";
+		break;
+		
+		case 2:
+			return classNum = "Period2";
+		break;
+		case 3:
+			return classNum = "Period3";
+		break;
+		case 4:
+			return classNum = "Period4";
+		break;
+		case 5:
+			return classNum = "Period5";
+		break;
+		case 6:
+			return classNum = "Period6";
+		break;
+		case 7:
+			return classNum = "Period7";
+		break;
+		case 8:
+			return classNum = "Period8";
+		break;
+	}
+	
+	
+}
 
 
 
