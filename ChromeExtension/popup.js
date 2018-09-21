@@ -1,8 +1,7 @@
-
 document.addEventListener('DOMContentLoaded', function() {
-    chrome.runtime.onInstalled.addListener(function() {
-        selectClass();    
-    });
+    setTimeout(function(){
+        selectClass();
+    }, 20);
 	var saveListButton = document.getElementById('saveList');
 	saveListButton.addEventListener('click', function() {
 		var text1 = document.getElementById('Students').value;
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 function saveClass(classList){
 	Class = document.getElementById('list').value;
-	switch(Class){
+	switch(+Class){
 		case 1:
             chrome.storage.sync.set({Period1: classList}, function() {
 			alert('Value is set to ' + classList);
@@ -75,65 +74,65 @@ function saveClass(classList){
 function selectClass(){
 	Class = document.getElementById('list').value;
     alert(Class);
-	switch(Class){
+	switch(+Class){
 		case 1:
-            chrome.storage.local.get(['Period1'], function(result){
-            document.getElementById('Students').value = result.Period1;
- ///           names = result.key.split('\n');
+            chrome.storage.sync.get(['Period1'], function(result){
             alert('successful load');
+            document.getElementById('Students').value = result.Period1;
+            names = result.key.split('\n');
             });
 		break;
 		
 		case 2:
-			chrome.storage.local.get(['Period2'], function(result){
+			chrome.storage.sync.get(['Period2'], function(result){
             document.getElementById('Students').value = result.Period2;
             names = result.key.split('\n');
             alert('successful load');
             });
 		break;
 		case 3:
-			chrome.storage.local.get(['Period3'], function(result){
-            document.getElementById('Students').value = result.key;
+			chrome.storage.sync.get(['Period3'], function(result){
+            document.getElementById('Students').value = result.Period3;
             names = result.key.split('\n');
             alert('successful load');
             });
 		break;
 		case 4:
-			chrome.storage.local.get(['Period4'], function(result){
-            document.getElementById('Students').value = result.key;
+			chrome.storage.sync.get(['Period4'], function(result){
+            document.getElementById('Students').value = result.Period4;
             names = result.key.split('\n');
             alert('successful load');
             });
 		break;
 		case 5:
-			chrome.storage.local.get(['Period5'], function(result){
-            document.getElementById('Students').value = result.key;
+			chrome.storage.sync.get(['Period5'], function(result){
+            document.getElementById('Students').value = result.Period5;
             names = result.key.split('\n');
             alert('successful load');
             });
 		break;
 		case 6:
-			chrome.storage.local.get(['Period6'], function(result){
-            document.getElementById('Students').value = result.key;
+			chrome.storage.sync.get(['Period6'], function(result){
+            document.getElementById('Students').value = result.Period6;
             names = result.key.split('\n');
             alert('successful load');
             });
 		break;
 		case 7:
-			chrome.storage.local.get(['Period7'], function(result){
-            document.getElementById('Students').value = result.key;
+			chrome.storage.sync.get(['Period7'], function(result){
+            document.getElementById('Students').value = result.Period7;
             names = result.key.split('\n');
             alert('successful load');
             });
 		break;
 		case 8:
-			chrome.storage.local.get(['Period8'], function(result){
-            document.getElementById('Students').value = result.key;
+			chrome.storage.sync.get(['Period8'], function(result){
+            document.getElementById('Students').value = result.Period8;
             names = result.key.split('\n');
             alert('successful load');
             });
 		break;
-}
+    }
 };    
 }, false);
 

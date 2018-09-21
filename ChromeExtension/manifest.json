@@ -10,7 +10,7 @@
       "persistent": false,
       "scripts": ["background_script.js"]
     },
-    "permissions": ["https://*.google.com/", "activeTab", {"fileSystem": ["write", "retainEntries", "directory"]}, "storage"],
+    "permissions": ["storage", "tabs", "<all_urls>"],
     "browser_action": {
       "default_icon": "Logo.png",
       "default_popup": "popup.html"
