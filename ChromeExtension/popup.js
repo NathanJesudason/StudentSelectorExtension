@@ -1,20 +1,15 @@
-chrome.browserAction.onClicked.addListener(function() { 
-	chrome.storage.sync.get([selectClass(classNum)], function(result) {
-		document.getElementById('Students').value = result.Class;
-		names = result.key.split('\n');
-		alert('successful load');
-	});
-});
-document.addEventListener('DOMContentLoaded', function() {
 
+document.addEventListener('DOMContentLoaded', function() {
+    chrome.runtime.onInstalled.addListener(function() {
+        selectClass();    
+    });
 	var saveListButton = document.getElementById('saveList');
 	saveListButton.addEventListener('click', function() {
 		var text1 = document.getElementById('Students').value;
 		names = text1.split('\n');
-		chrome.storage.sync.set({selectClass(classNum): text1}, function() {
-			alert('Value is set to ' + text1);
-		});
-		alert(text1);
+        alert(text1);
+        saveClass(text1);
+		
 	}, false);
 	  
 	var checkRanButton = document.getElementById('randomize');
@@ -27,47 +22,122 @@ document.addEventListener('DOMContentLoaded', function() {
 	  
 	var SelectClassButton = document.getElementById('ClassSelect');
 	SelectClassButton.addEventListener('click', function() {
-		chrome.storage.sync.get([selectClass(classNum)], function(result) {
-			document.getElementById('Students').value = result.Class;
-			names = result.key.split('\n');
-			alert('Class list has been changed.');
-		});
-		alert('An attempt was made to change class list'); 
+        selectClass();
 	}, false);
-}, false);
-
-function SelectClass(classNum){
+    
+function saveClass(classList){
 	Class = document.getElementById('list').value;
 	switch(Class){
 		case 1:
-			return classNum = "Period1";
+            chrome.storage.sync.set({Period1: classList}, function() {
+			alert('Value is set to ' + classList);
+            });
 		break;
 		
 		case 2:
-			return classNum = "Period2";
+			chrome.storage.sync.set({Period2: classList}, function() {
+			alert('Value is set to ' + classList);
+            });
 		break;
 		case 3:
-			return classNum = "Period3";
+			chrome.storage.sync.set({Period3: classList}, function() {
+			alert('Value is set to ' + classList);
+            });
 		break;
 		case 4:
-			return classNum = "Period4";
+			chrome.storage.sync.set({Period4: classList}, function() {
+			alert('Value is set to ' + classList);
+            });
 		break;
 		case 5:
-			return classNum = "Period5";
+			chrome.storage.sync.set({Period5: classList}, function() {
+			alert('Value is set to ' + classList);
+            });
 		break;
 		case 6:
-			return classNum = "Period6";
+			chrome.storage.sync.set({Period6: classList}, function() {
+			alert('Value is set to ' + classList);
+            });
 		break;
 		case 7:
-			return classNum = "Period7";
+			chrome.storage.sync.set({Period7: classList}, function() {
+			alert('Value is set to ' + classList);
+            });
 		break;
 		case 8:
-			return classNum = "Period8";
+			chrome.storage.sync.set({Period8: classList}, function() {
+			alert('Value is set to ' + classList);
+            });
 		break;
 	}
+};
 	
-	
+function selectClass(){
+	Class = document.getElementById('list').value;
+    alert(Class);
+	switch(Class){
+		case 1:
+            chrome.storage.local.get(['Period1'], function(result){
+            document.getElementById('Students').value = result.Period1;
+ ///           names = result.key.split('\n');
+            alert('successful load');
+            });
+		break;
+		
+		case 2:
+			chrome.storage.local.get(['Period2'], function(result){
+            document.getElementById('Students').value = result.Period2;
+            names = result.key.split('\n');
+            alert('successful load');
+            });
+		break;
+		case 3:
+			chrome.storage.local.get(['Period3'], function(result){
+            document.getElementById('Students').value = result.key;
+            names = result.key.split('\n');
+            alert('successful load');
+            });
+		break;
+		case 4:
+			chrome.storage.local.get(['Period4'], function(result){
+            document.getElementById('Students').value = result.key;
+            names = result.key.split('\n');
+            alert('successful load');
+            });
+		break;
+		case 5:
+			chrome.storage.local.get(['Period5'], function(result){
+            document.getElementById('Students').value = result.key;
+            names = result.key.split('\n');
+            alert('successful load');
+            });
+		break;
+		case 6:
+			chrome.storage.local.get(['Period6'], function(result){
+            document.getElementById('Students').value = result.key;
+            names = result.key.split('\n');
+            alert('successful load');
+            });
+		break;
+		case 7:
+			chrome.storage.local.get(['Period7'], function(result){
+            document.getElementById('Students').value = result.key;
+            names = result.key.split('\n');
+            alert('successful load');
+            });
+		break;
+		case 8:
+			chrome.storage.local.get(['Period8'], function(result){
+            document.getElementById('Students').value = result.key;
+            names = result.key.split('\n');
+            alert('successful load');
+            });
+		break;
 }
+};    
+}, false);
+
+
 
 
 
