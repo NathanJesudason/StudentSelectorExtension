@@ -3,9 +3,9 @@ This is a Google Chrome extension that selects a name from given lists at random
 # Created by team BNN News:
 ![alt text](https://github.com/Benji-Wan-Kenobi/StudentSelectorExtension/blob/master/BNN%20News%20Logo.png )
 Ben McFarland, Nathan Jesudason, and Noah Wager
-#Client Q&A:
+# Client Q&A:
 [Link to Client Q&A here](https://docs.google.com/document/d/18MseBVS9tjOnH4YpXY_dcN9RrPCrgch0yR4slvqhKLQ/edit?usp=sharing)
-#Attributions
+# Attributions
 [https://developer.chrome.com/webstore/get_started_simple](https://developer.chrome.com/webstore/get_started_simple)
 [https://www.w3schools.com/js/js_htmldom_html.asp](https://www.w3schools.com/js/js_htmldom_html.asp)
 [https://www.w3schools.com/jsref/prop_textarea_value.asp](https://www.w3schools.com/jsref/prop_textarea_value.asp)
