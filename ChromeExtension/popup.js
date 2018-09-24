@@ -82,7 +82,7 @@ function selectClass(){
             chrome.storage.sync.get(['Period1'], function(result){
             console.log('successful load');
             document.getElementById('Students').value = result.Period1;
-            document.getElementById('displayClass').innerHTML = 'Students in Class 1';
+            document.getElementById('displayClass').innerHTML = 'Currently Selected Class is Class 1';
             names = result.Period1.split('\n');
             });
 		break;
