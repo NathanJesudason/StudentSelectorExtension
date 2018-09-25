@@ -31,43 +31,43 @@ function saveClass(classList){
 	Class = document.getElementById('list').value;
 	switch(+Class){
 		case 1:
-            chrome.storage.sync.set({Period1: classList}, function() {
+            chrome.storage.local.set({Period1: classList}, function() {
 			console.log('Value is set to ' + classList);
             });
 		break;
 		
 		case 2:
-			chrome.storage.sync.set({Period2: classList}, function() {
+			chrome.storage.local.set({Period2: classList}, function() {
 			console.log('Value is set to ' + classList);
             });
 		break;
 		case 3:
-			chrome.storage.sync.set({Period3: classList}, function() {
+			chrome.storage.local.set({Period3: classList}, function() {
 			console.log('Value is set to ' + classList);
             });
 		break;
 		case 4:
-			chrome.storage.sync.set({Period4: classList}, function() {
+			chrome.storage.local.set({Period4: classList}, function() {
 			console.log('Value is set to ' + classList);
             });
 		break;
 		case 5:
-			chrome.storage.sync.set({Period5: classList}, function() {
+			chrome.storage.local.set({Period5: classList}, function() {
 			console.log('Value is set to ' + classList);
             });
 		break;
 		case 6:
-			chrome.storage.sync.set({Period6: classList}, function() {
+			chrome.storage.local.set({Period6: classList}, function() {
 			console.log('Value is set to ' + classList);
             });
 		break;
 		case 7:
-			chrome.storage.sync.set({Period7: classList}, function() {
+			chrome.storage.local.set({Period7: classList}, function() {
 			console.log('Value is set to ' + classList);
             });
 		break;
 		case 8:
-			chrome.storage.sync.set({Period8: classList}, function() {
+			chrome.storage.local.set({Period8: classList}, function() {
 			console.log('Value is set to ' + classList);
             });
 		break;
@@ -79,7 +79,7 @@ function selectClass(){
     console.log(Class);
 	switch(+Class){
 		case 1:
-            chrome.storage.sync.get(['Period1'], function(result){
+            chrome.storage.local.get(['Period1'], function(result){
             console.log('successful load');
             document.getElementById('Students').value = result.Period1;
             document.getElementById('displayClass').innerHTML = 'Currently Selected Class is Class 1';
@@ -88,7 +88,7 @@ function selectClass(){
 		break;
 		
 		case 2:
-			chrome.storage.sync.get(['Period2'], function(result){
+			chrome.storage.local.get(['Period2'], function(result){
             document.getElementById('Students').value = result.Period2;
             document.getElementById('displayClass').innerHTML = 'Currently Selected Class is Class 2';
             names = result.Period2.split('\n');
@@ -96,7 +96,7 @@ function selectClass(){
             });
 		break;
 		case 3:
-			chrome.storage.sync.get(['Period3'], function(result){
+			chrome.storage.local.get(['Period3'], function(result){
             document.getElementById('Students').value = result.Period3;
             document.getElementById('displayClass').innerHTML = 'Currently Selected Class is Class 3';
             names = result.Period3.split('\n');
@@ -104,7 +104,7 @@ function selectClass(){
             });
 		break;
 		case 4:
-			chrome.storage.sync.get(['Period4'], function(result){
+			chrome.storage.local.get(['Period4'], function(result){
             document.getElementById('Students').value = result.Period4;
             document.getElementById('displayClass').innerHTML = 'Currently Selected Class is Class 4';
             names = result.Period4.split('\n');
@@ -112,7 +112,7 @@ function selectClass(){
             });
 		break;
 		case 5:
-			chrome.storage.sync.get(['Period5'], function(result){
+			chrome.storage.local.get(['Period5'], function(result){
             document.getElementById('Students').value = result.Period5;
             document.getElementById('displayClass').innerHTML = 'Currently Selected Class is Class 5';
             names = result.Period5.split('\n');
@@ -120,7 +120,7 @@ function selectClass(){
             });
 		break;
 		case 6:
-			chrome.storage.sync.get(['Period6'], function(result){
+			chrome.storage.local.get(['Period6'], function(result){
             document.getElementById('Students').value = result.Period6;
             document.getElementById('displayClass').innerHTML = 'Currently Selected Class is Class 6';
             names = result.Period6.split('\n');
@@ -128,7 +128,7 @@ function selectClass(){
             });
 		break;
 		case 7:
-			chrome.storage.sync.get(['Period7'], function(result){
+			chrome.storage.local.get(['Period7'], function(result){
             document.getElementById('Students').value = result.Period7;
             document.getElementById('displayClass').innerHTML = 'Currently Selected Class is Class 7';
             names = result.Period7.split('\n');
@@ -136,7 +136,7 @@ function selectClass(){
             });
 		break;
 		case 8:
-			chrome.storage.sync.get(['Period8'], function(result){
+			chrome.storage.local.get(['Period8'], function(result){
             document.getElementById('Students').value = result.Period8;
             document.getElementById('displayClass').innerHTML = 'Currently Selected Class is Class 8';
             names = result.Period8.split('\n');
