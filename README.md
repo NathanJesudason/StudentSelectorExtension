@@ -16,6 +16,3 @@ Ben McFarland, Nathan Jesudason, and Noah Wager
 [https://developer.chrome.com/extensions/storage](https://developer.chrome.com/extensions/storage)
 [https://www.w3schools.com/js/js_switch.asp](https://www.w3schools.com/js/js_switch.asp)
 [https://stackoverflow.com/questions/2858121/convert-comma-separated-string-to-array](https://stackoverflow.com/questions/2858121/convert-comma-separated-string-to-array)
-
-# Created by team BNN News:
-![alt text](https://github.com/Benji-Wan-Kenobi/StudentSelectorExtension/blob/master/BNN%20News%20Logo.png)
