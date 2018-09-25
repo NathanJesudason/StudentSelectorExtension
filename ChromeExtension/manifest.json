@@ -1,6 +1,6 @@
   {
-    "name": "My Extension",
-    "version": "2.1",
+    "name": "Student Selector",
+    "version": "1.0",
 	"manifest_version": 2,
     "description": "Randomly Selects Names.",
     "icons": {
